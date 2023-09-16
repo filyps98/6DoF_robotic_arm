@@ -22,8 +22,12 @@ wire and the third one is the signal wire, which carries control signals between
 Arduino and the servos. These signal wires are connected to Arduino PMW (Pulse-
 with-modulation) pins, capable to control the duration of the signal pulse output. Each pulse duration determines a specific servo angle position, allowing for precise control of the shaft movement. Since the Arduino itself is not capable to output the necessary power to drive all the robots at the same moment, an external battery is added to the circuit as an additional power supply.
 
+![Image Alt Text](Arduino_Wiring.png)
+
 ## Robot Modelling
 In this project, the Denavit and Hartenberg (D-H) convention is used. According to this convention, each joint of the robot is associated with a coordinate frame, connected among each other through links, which represent the robot arm components. After determining the frame convention for each joint and the DH parameters, a transformation matrix needs to be constructed. Given a certain joint angle, this matrix allows one to determine the coordinates of a joint position according to the reference frame of the previous joint. The file: dh-convention.blend represents the frame assignment
+
+![Image Alt Text](DH_assignment.png)
 
 ## Forward and Inverse Kinematics
 To control the robot end-effector, a correlation between its position coordinates and the robot joint configuration must be determined. Once the joint angles are calculated, the robot motors will then move to match them. The control model will be based on the Forward Kinematics (FK) and Inverse Kinematics (IK) approaches. The first method allows linking a set of joint angles to a specific end-effector position using the aforementioned transformation matrices, while the second method allows to determine a joint angle configuration from a specific end-effector position. 
