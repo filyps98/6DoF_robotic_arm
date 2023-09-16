@@ -29,7 +29,7 @@ with-modulation) pins, capable to control the duration of the signal pulse outpu
 ## Robot Modelling
 In this project, the Denavit and Hartenberg (D-H) convention is used. According to this convention, each joint of the robot is associated with a coordinate frame, connected among each other through links, which represent the robot arm components. After determining the frame convention for each joint and the DH parameters, a transformation matrix needs to be constructed. Given a certain joint angle, this matrix allows one to determine the coordinates of a joint position according to the reference frame of the previous joint. The file: dh-convention.blend represents the frame assignment
 <div align="center">
-  <img src="DH_assignment.png" alt="Robot Modelling" style="width: 50%;"/>
+  <img src="DH_assignment.png" alt="Robot Modelling" style="width: 40%;"/>
 </div>
 
 
