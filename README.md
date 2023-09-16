@@ -36,7 +36,10 @@ To control the robot end-effector, a correlation between its position coordinate
 In order to verify the potential of this architecture, a control strategy is implemented whose goal is to control the robot's trajectory and speed. The trajectory is the result of interpolation of a set of 𝑛 target points which need to be reached by the robot’s end-effector. Since the robot uses servo motors, the movements to reach these points are quick and snappy due to the discrete nature of servo rotation. In order to reduce this abruptness and to better control the speed of movement, intermediate points are extracted from the trajectory with a user-selected sampling rate 𝑟. The trajectory is also smoothed using a Gaussian filter dependent on a user-selected parameter.
 
 ### Result
-![Image Alt Text](smoothing-traj.png)
+<div align="center">
+  <img src="smoothing-traj.png" alt="Trajectory Smoothing" style="width: 50%;"/>
+</div>
+
 
 
 ## Object Avoidance
