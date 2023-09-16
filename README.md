@@ -37,7 +37,11 @@ In this project, the Denavit and Hartenberg (D-H) convention is used. According 
 To control the robot end-effector, a correlation between its position coordinates and the robot joint configuration must be determined. Once the joint angles are calculated, the robot motors will then move to match them. The control model will be based on the Forward Kinematics (FK) and Inverse Kinematics (IK) approaches. The first method allows linking a set of joint angles to a specific end-effector position using the aforementioned transformation matrices, while the second method allows to determine a joint angle configuration from a specific end-effector position. 
 
 ## Interpolation of trajectory
-In order to verify the potential of this architecture, a control strategy is implemented whose goal is to control the robot's trajectory and speed. The trajectory is the result of interpolation of a set of 𝑛 target points which need to be reached by the robot’s end-effector. Since the robot uses servo motors, the movements to reach these points are quick and snappy due to the discrete nature of servo rotation. In order to reduce this abruptness and to better control the speed of movement, intermediate points are extracted from the trajectory with a user-selected sampling rate 𝑟. The trajectory is also smoothed using a Gaussian filter dependent on a user-selected parameter.
+In order to verify the potential of this architecture, a control strategy is implemented whose goal is to control the robot's trajectory and speed. The trajectory is the result of interpolation of a set of 𝑛 target points which need to be reached by the robot’s end-effector. Since the robot uses servo motors, the movements to reach these points are quick and snappy due to the discrete nature of servo rotation. In order to reduce this abruptness and to better control the speed of movement, intermediate points are extracted from the trajectory with a user-selected sampling rate 𝑟. The trajectory is also smoothed using a Gaussian filter dependent on a user-selected parameter s.
+
+### How to Use
+Start the program: trajectory_following_smoothing_ARDUINO.m
+You can insert the value of r and s in the Matlab prompt, and modify the trajectory points by specifying them inside the program.
 
 ### Result
 <div align="center">
@@ -48,6 +52,10 @@ In order to verify the potential of this architecture, a control strategy is imp
 
 ## Object Avoidance
 The second control strategy implemented in this research allows the robot to avoid objects positioned inside its working space under the assumption that the position of the obstacle is known. To achieve this, the rapidly exploring random trees (RTT) method is used. This popular motion planning technique is designed to efficiently explore and navigate complex and high-dimensional spaces to find feasible paths for a robot or any other system to reach a desired goal while avoiding obstacles.
+
+### How to Use
+Start the program: object_avoidance_without_collision_ARDUINO.m
+You can specify the starting and final points of the trajectory, and the position and size of the obstacle inside the program.
 
 ### Result
 <div align="center">
